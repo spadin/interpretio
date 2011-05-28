@@ -1,4 +1,3 @@
-<form method='post' id='show-result' target='result' action='http://fiddle.jshell.net/_display/'>
 	<div id='header'>
 		<div id='branding'>
 			<p id='name'><a href='/' id='home'>jsFiddle (alpha)</a></p>
@@ -77,13 +76,18 @@
 		<div class="element ui_toggle_container">
 			<div class="elementBody">
 				<div class="ebCont">
-					<ul>
-						<li><label><input type="checkbox" name="language[]" id="language_english" />English</label></li>
-						<li><label><input type="checkbox" name="language[]" id="language_spanish" />Spanish</label></li>
-						<li><label><input type="checkbox" name="language[]" id="language_french" />French</label></li>
-						<li><label><input type="checkbox" name="language[]" id="language_german" />German</label></li>
-						<li><label><input type="checkbox" name="language[]" id="language_italian" />Italian</label></li>
-					</ul>
+					<form method="post" id="translator_form" name="translator_form" action="/translations.xml">
+					<fieldset>
+						<ul>
+							<li><label><input type="checkbox" name="language[]" id="language_english" />English</label></li>
+							<li><label><input type="checkbox" name="language[]" id="language_spanish" />Spanish</label></li>
+							<li><label><input type="checkbox" name="language[]" id="language_french" />French</label></li>
+							<li><label><input type="checkbox" name="language[]" id="language_german" />German</label></li>
+							<li><label><input type="checkbox" name="language[]" id="language_italian" />Italian</label></li>
+						</ul>
+						<input type="hidden" name="conference_id" id="conference_id" value="1" />
+					</fieldset>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -111,11 +115,15 @@
 			</div>
 			<div class='handler handler_horizontal'></div>
 			<div class="window bottom">
-				<fieldset>
-					<textarea id="id_code_js" name="code_js"></textarea>
-					<span class="window_label">Notes</span>
-				</fieldset>
+				<form method="post" id="log_form" name="log_form" action="/log/create">
+					<fieldset>
+						<textarea id="message" name="message"></textarea>
+						<span class="window_label">Notes</span>
+						<input type="hidden" name="conference_id" id="conference_id" value="1" />
+						<input type="hidden" name="user_id" id="conference_id" value="3" />
+						<input type="submit" name="log_form_submit" value="Go" />
+					</fieldset>
+				</form>
 			</div>
 			</div>
 	</div>
-</form>
