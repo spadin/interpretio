@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528183412) do
+ActiveRecord::Schema.define(:version => 20110528213312) do
 
   create_table "conferences", :force => true do |t|
     t.string   "title"
@@ -19,11 +19,23 @@ ActiveRecord::Schema.define(:version => 20110528183412) do
     t.datetime "updated_at"
   end
 
+  create_table "languages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "language_id"
+  end
+
   create_table "logs", :force => true do |t|
     t.string   "message"
     t.integer  "conferece_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "participants", :force => true do |t|
@@ -31,12 +43,24 @@ ActiveRecord::Schema.define(:version => 20110528183412) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
+    t.string   "phone"
   end
 
   create_table "recordings", :force => true do |t|
     t.integer  "conference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
+    t.string   "company"
+    t.string   "email"
   end
 
 end

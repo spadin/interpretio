@@ -1,3 +1,8 @@
-TWILIO_SID = "ACa32c78fe78c7bf389e57b95c48864cbb"
-TWILIO_TOKEN = "73fb94978ca93509f7606364a421a6ff"
-TWILIO_NUMBER = TWILIO_CALLER_ID = "3124706928"
+require "yaml"
+config_hash = YAML::load_file("#{RAILS_ROOT}/config/twilio.yml")
+
+# This should be in an initializer or similar
+Twilio::Config.setup do
+  account_sid  config_hash['account_sid']
+  auth_token   config_hash['auth_token']
+end
