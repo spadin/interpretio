@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20110528182126) do
     t.datetime "updated_at"
    end
 
-ActiveRecord::Schema.define(:version => 20110528183412) do
 
   create_table "conferences", :force => true do |t|
     t.string   "title"
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20110528183412) do
     t.string   "phone_number"
     t.string   "company"
   end
-  
+
   create_table "logs", :force => true do |t|
     t.string   "message"
     t.integer  "conferece_id"
@@ -58,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20110528183412) do
 
   create_table "recordings", :force => true do |t|
     t.integer  "conference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

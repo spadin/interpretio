@@ -67,10 +67,13 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    twilio (3.0.1)
-      builder (~> 2.1.2)
-      httparty (~> 0.7.4)
+    twilio-rb (1.0beta)
+      activesupport (>= 3.0.0)
+      builder (>= 2.1.2)
+      httparty (>= 0.6.1)
+      yajl-ruby (>= 0.7.7)
     tzinfo (0.3.27)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
@@ -79,4 +82,4 @@ DEPENDENCIES
   gravtastic
   rails (= 3.0.7)
   sqlite3
-  twilio
+  twilio-rb (= 1.0beta)
