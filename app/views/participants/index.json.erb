@@ -1,4 +1,6 @@
-<%= @participants.each |p| do %>
-  <%= p.to_json %>
+[
+<% @participants.each do |p|  %>
+  <%= raw p.to_json[0..-2]%>, <%=raw p.user ? p.user.to_json[1..-2] : '"user":null'%> } <%= "," unless @participants.last == p %>
 <% end %>
+]
 
