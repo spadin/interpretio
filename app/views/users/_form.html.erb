@@ -30,6 +30,13 @@
      <%= f.text_field :company %>
    </div>
 
+   <!-- <div class="field"> -->
+     <%= f.label :language %><br />
+     <% f.fields_for :languages do |l| %>
+       <%=  l.select(:id, Language.all, :id, :name) %>
+     <% end %>
+   <!-- </div> -->
+
   <div class="actions">
     <%= f.submit %>
   </div>
