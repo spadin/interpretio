@@ -35,7 +35,7 @@
 				<div class="ebCont">
           <% @conference.participants.each do |participant| %>
             <div class="attendee">
-              <img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
+				<%= image_tag participant.user.gravatar_url %>
               <h4><%= participant.phone %></h4>
               <p class="info"><%= participant.location %></p>
             </div>
