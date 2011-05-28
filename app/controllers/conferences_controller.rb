@@ -20,6 +20,9 @@ class ConferencesController < ApplicationController
       format.html # show.html.erb
         format.xml do
 
+          @participant = @conference.participants.find_by_phone(params["Caller"])
+          @paricipant ||= @conference.participants.create(:phone => params["Caller"], :location => params["FromCity"] + params["FromState"], :conference => @conference)
+
           response = Twilio::TwiML.build do |res|
              res.say "This conference may be recorded"
              res.dial do |call|
