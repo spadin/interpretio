@@ -33,6 +33,7 @@
 		<div id="attendees" class="element ui_toggle_container">
 			<div class="elementBody">
 				<div class="ebCont">
+          <%= "No Attendees" if @conference.participants.empty? %>
           <% @conference.participants.each do |participant| %>
             <div class="attendee">
 				<% if !participant.user.nil? %>
@@ -106,7 +107,6 @@
 						<span class="window_label">Notes</span>
 						<input type="hidden" name="conference_id" id="conference_id" value="1" />
 						<input type="hidden" name="user_id" id="conference_id" value="3" />
-						<input type="submit" name="log_form_submit" value="Go" />
 					</fieldset>
 				</form>
 			</div>
