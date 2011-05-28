@@ -12,6 +12,7 @@ Translatio::Application.routes.draw do
   resources :languages
   resources :users
   resources :translations
+  resources :participants
 
   get "translation/index"
   get "translation/begin"

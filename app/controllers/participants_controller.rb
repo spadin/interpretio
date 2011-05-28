@@ -1,8 +1,8 @@
 class ParticipantsController < ApplicationController
-  def list
-    @participants = Participants.find(:all)
+  def index
+    @participants = Conference.last.participants
     respond_to do |format|
-        format.json  { render :json => @participants }
+        format.json  
     end
   end
   def create
