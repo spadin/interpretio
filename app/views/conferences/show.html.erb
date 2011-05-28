@@ -16,7 +16,7 @@
 	</div>
 	<div id='sidebar'>
 		<div id="info">
-			<p>Welcome to transconf - offering online conference call recording and translation.<a id="info-close" title="Close" href="#">Close</a></p>
+			<p>Welcome to interpretio - offering online conference call recording and translation.<a id="info-close" title="Close" href="#">Close</a></p>
 		</div>
 
 		<h3 class="ui_toggle">Conference Info</h3>
@@ -33,24 +33,13 @@
 		<div id="attendees" class="element ui_toggle_container">
 			<div class="elementBody">
 				<div class="ebCont">
-          <div class="attendee organizer">
-            <img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
-            <h4>Jane Doe</h4>
-            <p class="info">Organizer</p>
-          </div>
-            <% @conference.participants.each do |participant| %>
-              <div class="attendee">
-                <img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
-                <h4><%= participant.phone %></h4>
-                <p class="info"><%= participant.location %></p>
-              </div>
-            <% end %>
-
-					<div class="attendee translator">
-						<img src="/res/images/186990_1219418428_5588171_q.jpg" alt="John Doe" />
-						<h4>John Doe</h4>
-						<p class="info">Translator</p>
-					</div>
+          <% @conference.participants.each do |participant| %>
+            <div class="attendee">
+              <img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
+              <h4><%= participant.phone %></h4>
+              <p class="info"><%= participant.location %></p>
+            </div>
+          <% end %>
 				</div>
 			</div>
 		</div>
@@ -62,12 +51,6 @@
 					<div id="external-resources-form">
 						<input id="external_resource" type="text" value="" /><a id="add_external_resource" class="submit" href="#" title="Add resource"><span>Add</span></a>
 					</div>
-					<input type='hidden' value='' id='external_resources_id' name='add_external_resources' />
-					<ul id='external_resources_list'>
-						<script type='text/javascript'>
-							var resources = [];
-						</script>
-					</ul>
 				</div>
 			</div>
 		</div>
