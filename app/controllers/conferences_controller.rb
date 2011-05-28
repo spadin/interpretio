@@ -13,7 +13,7 @@ class ConferencesController < ApplicationController
   # GET /conferences/1
   # GET /conferences/1.xml
   def show
-    @conference = Conference.find_by_title("APIHACKDAY")
+    @conference = Conference.last
 
 
     respond_to do |format|

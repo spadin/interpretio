@@ -33,6 +33,7 @@
 		<div id="attendees" class="element ui_toggle_container">
 			<div class="elementBody">
 				<div class="ebCont">
+          <%= "No Attendees" if @conference.participants.empty? %>
           <% @conference.participants.each do |participant| %>
             <div class="attendee">
               <img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
