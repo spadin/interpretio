@@ -20,6 +20,12 @@
   <%= @user.company %>
 </p>
 
+<p>
+  <b>Langauges:</b>
+  <% @user.languages.each do |l|  %>
+  <%= l.name %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
