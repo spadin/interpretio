@@ -7,7 +7,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    Logs.new(:message => params[:message], :user_id => params[:user_id]).save
+    Logs.new(:message => params[:message], :user_id => params[:user_id], :conference_id => params[:conference_id]).save
     render :text => "ok"
   end
 end
