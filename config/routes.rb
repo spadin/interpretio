@@ -1,6 +1,11 @@
 Translatio::Application.routes.draw do
+  get "recordings/index"
+  get "recordings/create"
+  
+  get "participants/create"
+  get "participants/list"
 
-  get "logs/index"
+  get "logs/list"
   get "logs/create"
   
   resources :conferences
