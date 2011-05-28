@@ -48,7 +48,8 @@ prepare_windows = function() {
 get_attendees = function() {
 	var attendees = [{'user': {'id': 1, 'fname': 'Jason', 'lname': 'McCreary', 'phone_number': '502.640.3554'}}];
 
-//	$.getJSON('ajax/test.json', function(data) {
+	$.getJSON('/participants.json', function(attendees) {
+		console.log('%s', attendees.toSource());
 		var attendee_container = $('#attendees .elementBody .ebCont');
 		
 		if (attendee_container.length == 0) {
@@ -60,11 +61,11 @@ get_attendees = function() {
 				continue;
 			}
 			
-//			console.log('%s', attendees[i].toSource());
+			console.log('%s', attendees[i].toSource());
 			var name = attendees[i].user.fname + ' ' + attendees[i].user.lname;
 			attendee_container.append('<div id="attendee_' + attendees[i].user.id + '" class="attendee"><img alt="' + name + '" src="/res/images/203299_4710281_1367346_q.jpg"><h4>' + name + '</h4><p class="info">' + attendees[i].user.phone_number + '</p></div>').fadeIn('slow');
 		}
-//	});
+	});
 }
 
 get_conference_log = function() {
