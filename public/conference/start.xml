@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Response>
+	<Say voice='woman'>You will now be placed into conference.</Say>
+	<Dial>
+		<Conference>interpretio</Conference>
+	</Dial>
+</Response>

@@ -1,0 +1,5 @@
+<ul id="messages">
+	<% for message in @messages %>
+		<li><%= message.created_at.localtime %><%= message.message %></li>
+	<% end %>
+</ul>
