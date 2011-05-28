@@ -118,6 +118,10 @@ send_data = function(form) {
 	$('#message').val('');
 }
 
+refresh = function() {
+	window.location = window.location;
+}
+
 $(document).ready(function() {
 	// prepare toggles
 	prepare_toggles();
@@ -129,6 +133,7 @@ $(document).ready(function() {
 	
 	// setup polling
 	// NOTE: this has no respect for perfomance, it's a demo
-	setInterval('get_conference_log()', 10000);
-	setInterval('get_attendees()', 10000);
+//	setInterval('get_conference_log()', 10000);
+//	setInterval('get_attendees()', 10000);
+//	setInterval('refresh()', 10000);
 });
