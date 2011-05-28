@@ -31,7 +31,7 @@ toggle_widget_state = function(e) {
 prepare_toggles = function() {
 	// hide content initially
 	$(".ui_toggle_container .elementBody").hide();
-	$("#attendees .elementBody").show();
+  $("#attendees .elementBody").show();
 
 	// add behavior for minimizing widget
 	$(".ui_toggle").click(toggle_widget_state);
