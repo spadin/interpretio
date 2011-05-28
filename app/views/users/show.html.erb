@@ -10,6 +10,16 @@
   <%= @user.lname %>
 </p>
 
+<p>
+  <b>Phone Number:</b>
+  <%= @user.phone_number %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @user.company %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
