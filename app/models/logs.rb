@@ -1,3 +1,4 @@
 class Logs < ActiveRecord::Base
-  belongs_to :conferece
+  belongs_to :conference
+  belongs_to :user
 end
