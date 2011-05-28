@@ -13,4 +13,4 @@ user = User.create([{ :fname => 'John', :lname => 'Doe', :phone_number => '31212
 user.first.languages << Language.where(:name => 'Spanish').first
 user.first.save!
 
-Conferences.create(:title => "APIHACKDAY")
+Conference.create(:title => "APIHACKDAY")
