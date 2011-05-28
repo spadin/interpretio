@@ -1,4 +1,6 @@
-<%= @participants.each |p| do %>
-  <%= p.to_json %>
+[
+<% @participants.each do |p|  %>
+  <%= p.to_json %>, <%= p.user.to_json %>
 <% end %>
+]
 
