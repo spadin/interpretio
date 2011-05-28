@@ -1,0 +1,113 @@
+<form method='post' id='show-result' target='result' action='http://fiddle.jshell.net/_display/'>
+	<div id='header'>
+		<div id='branding'>
+			<p id='name'><a href='/' id='home'>jsFiddle (alpha)</a></p>
+		</div>
+		<div id="actions">
+			<ul class="actionCont">
+				<li class="actionItem"><a class="aiButton" id="run" title="Run" href="#run"><span>Record</span></a></li>
+			</ul>
+			<ul class="actionCont collapsed">
+				<li class="actionItem"><a class="aiButton" id="clean" title="Reset all fields" href="#clear"><span>End Call</span></a></li>
+			</ul>
+			<ul class="actionCont right">
+				<li class="actionItem noIcon"><a class="aiButton" id="login" title="Login" href="/user/login/"><span>Login/Sign up</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id='sidebar'>
+		<div id="info">
+			<p>Welcome to transconf - offering online conference call recording and translation.<a id="info-close" title="Close" href="#">Close</a></p>
+		</div>
+
+		<h3 class="ui_toggle">Conference Info</h3>
+		<div class="element ui_toggle_container">
+			<div class="elementBody">
+				<div class="ebCont">
+					<p><label>Title<input id="id_title" type="text" name="title" maxlength="255" /></label></p>
+					<p><label>Description<textarea id="id_description" rows="10" cols="40" name="description"></textarea></label></p>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="ui_toggle active">Attendees</h3>
+		<div id="attendees" class="element ui_toggle_container">
+			<div class="elementBody">
+				<div class="ebCont">
+					<div class="attendee organizer">
+						<img src="/res/images/203299_4710281_1367346_q.jpg" alt="Jane Doe" />
+						<h4>Jane Doe</h4>
+						<p class="info">Twilio Exec</p>
+					</div>
+					<div class="attendee translator">
+						<img src="/res/images/186990_1219418428_5588171_q.jpg" alt="John Doe" />
+						<h4>John Doe</h4>
+						<p class="info">Twilio IT</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="ui_toggle">Add Attendee</h3>
+		<div class="element ui_toggle_container">
+			<div class="elementBody">
+				<div class="ebCont">
+					<div id="external-resources-form">
+						<input id="external_resource" type="text" value="" /><a id="add_external_resource" class="submit" href="#" title="Add resource"><span>Add</span></a>
+					</div>
+					<input type='hidden' value='' id='external_resources_id' name='add_external_resources' />
+					<ul id='external_resources_list'>
+						<script type='text/javascript'>
+							var resources = [];
+						</script>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="ui_toggle">Add Translator</h3>
+		<div class="element ui_toggle_container">
+			<div class="elementBody">
+				<div class="ebCont">
+					<ul>
+						<li><label><input type="checkbox" name="language[]" id="language_english" />English</label></li>
+						<li><label><input type="checkbox" name="language[]" id="language_spanish" />Spanish</label></li>
+						<li><label><input type="checkbox" name="language[]" id="language_french" />French</label></li>
+						<li><label><input type="checkbox" name="language[]" id="language_german" />German</label></li>
+						<li><label><input type="checkbox" name="language[]" id="language_italian" />Italian</label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<h3 class="ui_toggle">Legal stuff and credits</h3>
+		<div class="element ui_toggle_container">
+			<div class="elementBody">
+				<div class="ebCont">
+					<p>This is a demo for <a href="http://apihackdaychicago.eventbrite.com/">API Hack Day Chicago</a>.</p>
+					<p>Created by <a title="Jason McCreary" href="http://jason.pureconcepts.net">Jason McCreary</a>, <a title="Jason McCreary" href="http://jason.pureconcepts.net">Jason McCreary</a>, and <a title="Jason McCreary" href="http://jason.pureconcepts.net">Jason McCreary</a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+			<div class="window top">
+				<div id="log">
+					<ol>
+						<li><span class="attendee">Jane Doe:</span> This is something that recorded. <span class="timestamp">8:45am</span></li>
+						<li><span class="attendee">John Doe:</span> This is something that recorded. <span class="timestamp">8:46am</span></li>
+					</ol>
+				</div>
+				<span class="window_label">Log</span>
+			</div>
+			<div class='handler handler_horizontal'></div>
+			<div class="window bottom">
+				<fieldset>
+					<textarea id="id_code_js" name="code_js"></textarea>
+					<span class="window_label">Notes</span>
+				</fieldset>
+			</div>
+			</div>
+	</div>
+</form>
